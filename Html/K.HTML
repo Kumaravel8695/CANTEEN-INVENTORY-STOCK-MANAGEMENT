@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:lightblue;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.container h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+}
+
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>User Registration</h2>
+        <form id="registrationForm" action="#" method="POST">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <div id="usernameError" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <div id="emailError" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <div id="passwordError" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+                <div id="confirmPasswordError" class="error-message"></div>
+            </div>
+            <button type="button" onclick="validateForm()">Register</button>
+            <br>
+            <br>
+            <button onclick="location.href='k8.html'">Next </button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm_password").value;
+
+            // Simple validation for username (not empty)
+            if (username.trim() === "") {
+                document.getElementById("usernameError").innerHTML = "Please enter a username";
+                return false;
+            } else {
+                document.getElementById("usernameError").innerHTML = "";
+            }
+
+            // Simple validation for email (not empty and valid format)
+            if (email.trim() === "") {
+                document.getElementById("emailError").innerHTML = "Please enter an email address";
+                return false;
+            } else if (!validateEmail(email)) {
+                document.getElementById("emailError").innerHTML = "Please enter a valid email address";
+                return false;
+            } else {
+                document.getElementById("emailError").innerHTML = "";
+            }
+
+            // Simple validation for password (not empty)
+            if (password.trim() === "") {
+                document.getElementById("passwordError").innerHTML = "Please enter a password";
+                return false;
+            } else {
+                document.getElementById("passwordError").innerHTML = "";
+            }
+
+            // Simple validation for confirming password
+            if (confirmPassword.trim() === "") {
+                document.getElementById("confirmPasswordError").innerHTML = "Please confirm your password";
+                return false;
+            } else if (confirmPassword !== password) {
+                document.getElementById("confirmPasswordError").innerHTML = "Passwords do not match";
+                return false;
+            } else {
+                document.getElementById("confirmPasswordError").innerHTML = "";
+            }
+
+            // If all validations pass, show success message and reset form
+            alert("Registration successful!");
+            document.getElementById("registrationForm").reset();
+        }
+
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+    </script>
+    <form id="registrationForm" action="register.php" method="POST">
+
+</body>
+</html>

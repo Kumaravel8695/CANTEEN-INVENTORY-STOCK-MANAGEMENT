@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+    background-color: yellow;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+#settings {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings and Configuration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Settings and Configuration</h1>
+    
+    <div id="settings">
+        <h2>System Settings</h2>
+        <form id="system-settings-form">
+            <div class="form-group">
+                <label for="units-of-measurement">Default Units of Measurement:</label>
+                <select id="units-of-measurement" class="form-control" required>
+                    <option value="pcs">Pieces</option>
+                    <option value="kg">Kilograms</option>
+                    <option value="g">Grams</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tax-rate">Tax Rate (%):</label>
+                <input type="number" id="tax-rate" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="currency">Currency:</label>
+                <input type="text" id="currency" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Settings</button>
+            <button onclick="location.href='k9.html'">Next </button>
+        </form>
+    </div>
+
+    <script src="script6.js"></script>
+</body>
+</html>

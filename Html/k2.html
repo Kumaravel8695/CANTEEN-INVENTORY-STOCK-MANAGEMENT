@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        #supplier-list {
+            max-height: 300px;
+            overflow-y: auto;
+            background-image: url('https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'); /* Add the background image */
+            background-size: cover; /* Cover the entire container */
+            background-position: center; /* Center the background image */
+            /* Optionally, add more background properties */
+            /* background-repeat: no-repeat; */ /* Prevent background image from repeating */
+            /* background-attachment: fixed; */ /* Fixed background image */
+            /* background-color: #f0f0f0; */ /* Fallback background color */
+        }
+
+        .add-supplier-form {
+            margin-top: 20px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplier Management</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Supplier Management</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Suppliers</h2>
+                <ul id="supplier-list" class="list-group">
+                    <li class="list-group-item">SYED RICE SUPPLIER </li>
+                    <li class="list-group-item">AZAR VEGETABLES SUPPLIER </li>
+                    <li class="list-group-item">VEL GROCERIES DEALER</li>
+                    <!-- More list items can be added dynamically -->
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h2>Add New Supplier</h2>
+                <form id="add-supplier-form">
+                    <div class="form-group">
+                        <label for="supplier-name">Supplier Name:</label>
+                        <input type="text" class="form-control" id="supplier-name" name="supplier-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Contact Email:</label>
+                        <input type="email" class="form-control" id="contact-email" name="contact-email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Supplier</button>
+                </form>
+            </div>
+            <button onclick="location.href='k3.html'">Next </button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+        // JavaScript code
+        document.getElementById("add-supplier-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get form values
+            var supplierName = document.getElementById("supplier-name").value;
+            var contactEmail = document.getElementById("contact-email").value;
+
+            // Create a new list item
+            var newItem = document.createElement("li");
+            newItem.textContent = supplierName + " - " + contactEmail;
+
+            // Add the new item to the list
+            document.getElementById("supplier-list").appendChild(newItem);
+
+            // Reset the form
+            document.getElementById("add-supplier-form").reset();
+
+            // Show a success message
+            alert("New supplier added successfully!");
+        });
+    </script>
+</body>
+</html>

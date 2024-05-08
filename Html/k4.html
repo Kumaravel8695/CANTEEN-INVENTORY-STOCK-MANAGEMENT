@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+    background-color: pink;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.sales-form,
+.sales-orders {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.sales-orders ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sales-orders ul li {
+    margin-bottom: 5px;
+}
+
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Sales Management</h1>
+    
+    <div class="sales-form">
+        <h2>Create Sales Order</h2>
+        <form id="sales-order-form">
+            <div class="form-group">
+                <label for="item-name">Item Name:</label>
+                <input type="text" id="item-name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Sales Order</button>
+        </form>
+    </div>
+
+    <div class="sales-orders">
+        <h2>Sales Orders</h2>
+        <ul id="sales-order-list"></ul>
+    </div>
+    <button onclick="location.href='k5.html'">Next </button>
+     <script src="script3.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+    background-color: lightblue;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.purchase-form,
+.purchase-orders {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.purchase-orders ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.purchase-orders ul li {
+    margin-bottom: 5px;
+}
+
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Purchase Management</h1>
+    
+    <div class="purchase-form">
+        <h2>Create Purchase Order</h2>
+        <form id="purchase-order-form">
+            <div class="form-group">
+                <label for="item-name">Item Name:</label>
+                <input type="text" id="item-name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Purchase Order</button>
+        </form>
+    </div>
+
+    <div class="purchase-orders">
+        <h2>Purchase Orders</h2>
+        <ul id="purchase-order-list"></ul>
+    </div>
+    <button onclick="location.href='k4.html'">Next </button>
+
+    <script src="script2.js"></script>
+</body>
+</html>
